@@ -18,6 +18,9 @@
 		820A3F642932A3B300995BE0 /* EndpointProtocol + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A3F632932A3B300995BE0 /* EndpointProtocol + Extension.swift */; };
 		820A3F672932A67900995BE0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 820A3F662932A67900995BE0 /* Kingfisher */; };
 		820A3F6B2932A6F400995BE0 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A3F6A2932A6F400995BE0 /* UIImageView + Extension.swift */; };
+		820A3F6E2932AA7400995BE0 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 820A3F6D2932AA7400995BE0 /* Rswift */; };
+		8210E0022932B10C008E1C5C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8210E0012932B10C008E1C5C /* R.generated.swift */; };
+		829D5BD82932AB9C0040A978 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 829D5BD72932AB9C0040A978 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,8 @@
 		820A3F602932A34B00995BE0 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		820A3F632932A3B300995BE0 /* EndpointProtocol + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EndpointProtocol + Extension.swift"; sourceTree = "<group>"; };
 		820A3F6A2932A6F400995BE0 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
+		8210E0012932B10C008E1C5C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		829D5BD72932AB9C0040A978 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				820A3F672932A67900995BE0 /* Kingfisher in Frameworks */,
+				820A3F6E2932AA7400995BE0 /* Rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +95,8 @@
 			children = (
 				820A3F4B29329C7100995BE0 /* Assets.xcassets */,
 				820A3F4D29329C7100995BE0 /* LaunchScreen.storyboard */,
+				829D5BD72932AB9C0040A978 /* Localizable.strings */,
+				8210E0012932B10C008E1C5C /* R.generated.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 820A3F5329329C7100995BE0 /* Build configuration list for PBXNativeTarget "chidori" */;
 			buildPhases = (
+				820A3F6F2932AA8D00995BE0 /* R.swift */,
 				820A3F3B29329C7000995BE0 /* Sources */,
 				820A3F3C29329C7000995BE0 /* Frameworks */,
 				820A3F3D29329C7000995BE0 /* Resources */,
@@ -155,6 +164,7 @@
 			name = chidori;
 			packageProductDependencies = (
 				820A3F662932A67900995BE0 /* Kingfisher */,
+				820A3F6D2932AA7400995BE0 /* Rswift */,
 			);
 			productName = chidori;
 			productReference = 820A3F3F29329C7000995BE0 /* chidori.app */;
@@ -186,6 +196,7 @@
 			mainGroup = 820A3F3629329C7000995BE0;
 			packageReferences = (
 				820A3F652932A67900995BE0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				820A3F6C2932AA7400995BE0 /* XCRemoteSwiftPackageReference "R.swift" */,
 			);
 			productRefGroup = 820A3F4029329C7000995BE0 /* Products */;
 			projectDirPath = "";
@@ -202,11 +213,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				820A3F4F29329C7100995BE0 /* LaunchScreen.storyboard in Resources */,
+				829D5BD82932AB9C0040A978 /* Localizable.strings in Resources */,
 				820A3F4C29329C7100995BE0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		820A3F6F2932AA8D00995BE0 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/chidori/Resources/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/rswift/rswift\" generate \"$SRCROOT/chidori/Resources/R.generated.swift\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		820A3F3B29329C7000995BE0 /* Sources */ = {
@@ -215,6 +249,7 @@
 			files = (
 				820A3F5D2932A30200995BE0 /* NetworkServiceProtocol.swift in Sources */,
 				820A3F4329329C7000995BE0 /* AppDelegate.swift in Sources */,
+				8210E0022932B10C008E1C5C /* R.generated.swift in Sources */,
 				820A3F5F2932A32400995BE0 /* Endpoint.swift in Sources */,
 				820A3F5B2932A2D100995BE0 /* NetworkService.swift in Sources */,
 				820A3F6B2932A6F400995BE0 /* UIImageView + Extension.swift in Sources */,
@@ -446,6 +481,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		820A3F6C2932AA7400995BE0 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -453,6 +496,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 820A3F652932A67900995BE0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		820A3F6D2932AA7400995BE0 /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 820A3F6C2932AA7400995BE0 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
